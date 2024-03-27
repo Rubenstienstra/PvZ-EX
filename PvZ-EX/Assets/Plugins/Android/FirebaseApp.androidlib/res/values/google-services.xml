@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">773941785454</string>
+  <string name="google_storage_bucket" translatable="false">pvz-ex.appspot.com</string>
+  <string name="project_id" translatable="false">pvz-ex</string>
+  <string name="google_api_key" translatable="false">AIzaSyBQ81yto9ZNMUdomg2i_YdCdveTFde80Ug</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBQ81yto9ZNMUdomg2i_YdCdveTFde80Ug</string>
+  <string name="google_app_id" translatable="false">1:773941785454:android:0435b0a33bbdd0d126477f</string>
+</resources>
