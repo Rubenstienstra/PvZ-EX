@@ -1,4 +1,3 @@
-using Code.Scripts.UI.Shop;
 using Firebase.Database;
 using Newtonsoft.Json;
 using System.Collections;
@@ -26,7 +25,6 @@ public class FirebaseShopManager : MonoBehaviour
     [Header("Scripts")]
     public FirebaseManager firebaseManager;
     public FirebaseInventoryManager firebaseInventory;
-    public ShopController shopController;
     public FirebaseCharacterClothingInventory firebaseClothesInventory;
 
     IEnumerator Start()
@@ -84,11 +82,11 @@ public class FirebaseShopManager : MonoBehaviour
     }
     private void TurningIdIntoShopData()
     {
-        if(onlineShopIds.Count > shopController.allShopItems.Count)
-        {
-            Debug.LogWarning("onlineShopId: " + onlineShopIds.Count + ".Has more variables then the allShopItems: " + shopController.allShopItems.Count);
-            return;
-        }
+        //if(onlineShopIds.Count > shopController.allShopItems.Count)
+        //{
+        //    Debug.LogWarning("onlineShopId: " + onlineShopIds.Count + ".Has more variables then the allShopItems: " + shopController.allShopItems.Count);
+        //    return;
+        //}
 
         localShopIds.Clear();
         localShopItems.Clear();
@@ -98,19 +96,19 @@ public class FirebaseShopManager : MonoBehaviour
         {
             localShopIds.Add(onlineShopIds[i]);
 
-            var crShopItem = shopController.allShopItems[(int)onlineShopIds[i]];
+            //var crShopItem = shopController.allShopItems[(int)onlineShopIds[i]];
 
-            if(firebaseClothesInventory.localUserClothes.clothesIds.Contains(onlineShopIds[i]))
-            {
-                crShopItem.itemOwned = true;
-                if (allowDebug)
-                {
-                    print("A Item has already been bought!");
-                }
-            }
-            localShopItems.Add(crShopItem);
-            onlineShopItems.Add(crShopItem);
-            shopController.shopItemsToMake.Add(crShopItem);
+            //if(firebaseClothesInventory.localUserClothes.clothesIds.Contains(onlineShopIds[i]))
+            //{
+            //    crShopItem.itemOwned = true;
+            //    if (allowDebug)
+            //    {
+            //        print("A Item has already been bought!");
+            //    }
+            //}
+            //localShopItems.Add(crShopItem);
+            //onlineShopItems.Add(crShopItem);
+            //shopController.shopItemsToMake.Add(crShopItem);
         }
 
         OnResyncedShop.Invoke();

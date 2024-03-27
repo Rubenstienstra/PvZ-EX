@@ -1,6 +1,5 @@
 using Firebase.Database;
 using JetBrains.Annotations;
-using Mapbox.Examples;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -28,7 +27,6 @@ public class FirebasePoiManager : MonoBehaviour
     [Header("Scripts")]
     public FirebaseManager firebaseManager;
     public FirebaseInventoryManager firebaseInventoryManager;
-    public SpawnOnMap spawnOnMap;
     public enum PoiType { General = 0, Leisure = 1, History = 2 };
 
     [Serializable]
@@ -49,11 +47,8 @@ public class FirebasePoiManager : MonoBehaviour
     {
         yield return new WaitUntil(() => firebaseManager.initializedFirebase == true);
 
-        if (!spawnOnMap)
-        {
-            Debug.LogWarning("FirebasePoiManager variable: spawnOnMap is empty before game start!", this);
-            spawnOnMap = GameObject.Find("EventSpawner").GetComponent<SpawnOnMap>();
-        }
+
+
         yield return null;
     }
 

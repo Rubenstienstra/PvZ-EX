@@ -41,7 +41,7 @@ public class FirebaseSearchFriends : MonoBehaviour
 
         if (searchedUser != null)//Destroys searchedUser Everytime you search.
         {
-            searchedUser.Destroy();
+            Destroy(searchedUser);
         }
 
         await SearchTroughFriendsAsync(nameToSearch);
@@ -124,7 +124,7 @@ public class FirebaseSearchFriends : MonoBehaviour
         //Deletes first
         if (searchedUser != null)
         {
-            searchedUser.Destroy();
+            Destroy(searchedUser);
         }
 
         //Making FriendList

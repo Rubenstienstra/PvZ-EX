@@ -369,11 +369,11 @@ public class FirebaseInOutFriendRequests : MonoBehaviour
         {
             for (int i = 0; i < inGameObjectsRequests.Count; i++)
             {
-                inGameObjectsRequests[i].Destroy();
+                Destroy(inGameObjectsRequests[i]);
             }
             for (int i = 0; i < outGameObjectsRequests.Count; i++)
             {
-                outGameObjectsRequests[i].Destroy();
+                Destroy(outGameObjectsRequests[i]);
             }
             inGameObjectsRequests.Clear();
             outGameObjectsRequests.Clear();

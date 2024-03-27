@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "773941785454",
+    "project_id": "pvz-ex",
+    "storage_bucket": "pvz-ex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773941785454:android:0435b0a33bbdd0d126477f",
+        "android_client_info": {
+          "package_name": "com.CroppedProductions.PvZEX"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ81yto9ZNMUdomg2i_YdCdveTFde80Ug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

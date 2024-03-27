@@ -288,7 +288,7 @@ public class FirebaseFriendsList : MonoBehaviour
 
 
             friendPrefabs.Remove(friendGameObject);
-            friendGameObject.Destroy();
+            Destroy(friendGameObject);
 
             localFriendListIds.Remove(userID);
             onlineFriendListIds.Remove(userID);

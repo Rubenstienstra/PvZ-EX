@@ -26,8 +26,6 @@ namespace Code.Scripts.Firebase.Player
         [SerializeField] 
         private FirebaseProgressionInventory progressionInventory;
 
-        public UiManager uiManager;
-
         #endregion
 
         #region Public Methods
@@ -51,7 +49,6 @@ namespace Code.Scripts.Firebase.Player
             
             progressionInventory.AddingProgression(false);
             onExperienceChanged.Invoke(oldExperience, progressionInventory.localUserProgression.xp);
-            uiManager.XpBar();
         }
 
         #endregion
@@ -81,13 +78,11 @@ namespace Code.Scripts.Firebase.Player
             yield return new WaitUntil(() => progressionInventory.resyncedProgression);
             long crLevel = progressionInventory.localUserProgression.level;
             CalculateXPRequired();
-            uiManager.XpBar();
             if (progressionInventory.localUserProgression.xp >= experienceRequired)//Does nothing if he doesn't have enough xp to level up.
             {
                 progressionInventory.localUserProgression.xp -= experienceRequired;
                 progressionInventory.localUserProgression.level++;
                 CalculateXPRequired();
-                uiManager.XpBar();
                 onLevelChanged.Invoke(crLevel, progressionInventory.localUserProgression.level);
                 progressionInventory.AddingProgression(false);
             }

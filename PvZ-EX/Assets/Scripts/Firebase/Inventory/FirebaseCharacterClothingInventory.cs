@@ -29,7 +29,6 @@ public class FirebaseCharacterClothingInventory : MonoBehaviour//Add Clothing, R
     [Header("Scripts")]
     public FirebaseManager firebaseManager;
     public FirebaseInventoryManager firebaseInventory;
-    public Closet closet;
 
     private IEnumerator Start()//Waits until Firebase is ready
     {
@@ -105,7 +104,7 @@ public class FirebaseCharacterClothingInventory : MonoBehaviour//Add Clothing, R
 
                         if (i == dataSnapshot.ChildrenCount - 1)
                         {
-                            closet.InitFirebaseClothes(onlineUserClothes.ToArray());
+                            //closet.InitFirebaseClothes(onlineUserClothes.ToArray());
 
                             if (allowDebug)
                             {
@@ -114,7 +113,7 @@ public class FirebaseCharacterClothingInventory : MonoBehaviour//Add Clothing, R
 
                         }
                     }
-                    closet.crCharacter = onlineUserCharacter;
+                    //closet.crCharacter = onlineUserCharacter;
                     resyncedClothes = true;
                 }
             });

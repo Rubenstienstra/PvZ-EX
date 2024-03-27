@@ -9,7 +9,6 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using static OnlineMapsHereRoutingAPIResult;
 
 public class FirebaseProgressionInventory : MonoBehaviour//Replace Progression.
 {

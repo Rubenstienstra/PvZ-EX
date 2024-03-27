@@ -5,7 +5,6 @@ using System.Dynamic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using Mapbox.Unity.Map;
 using UnityEngine.UI;
 using Code.Scripts.Firebase.Player;
 
@@ -28,7 +27,6 @@ public class MainMenuUIManager : MonoBehaviour
     public float fadeDuration = 2f; // Duration of the fade in seconds
     public CanvasGroup loadingCanvasGroupImage;
     public GameObject gameUI;
-    public AbstractMap map;
     public bool uiOpen;
 
     [Header("Debug")]
@@ -40,23 +38,12 @@ public class MainMenuUIManager : MonoBehaviour
     {
         CreateInstance();
     }
-    
-    public void UIOpen(bool val) {
-        uiOpen = val;
-    }
-
-    private void Start() {
-        if (map != null) {
-            map.OnInitialized += Test;
-        } else {
-            // Handle the case when yourVariable is null
+    private void CreateInstance()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
         }
-
-    }
-    void Test() {
-        Debug.Log("Map loaded");
-        StartCoroutine(FadeOut(loadingCanvasGroupImage));
-        UIOpen(false);
     }
 
     IEnumerator FadeOut(CanvasGroup canvasGroup) {
@@ -74,13 +61,6 @@ public class MainMenuUIManager : MonoBehaviour
         // Ensure the final alpha value is set to 0
         canvasGroup.alpha = 0f;
 
-    }
-    private void CreateInstance()
-    {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
     }
 
     public void ClearUI()
@@ -133,10 +113,12 @@ public class MainMenuUIManager : MonoBehaviour
         }
     }
 
-    public void Play() {
+    public void Play() 
+    {
         StartCoroutine(PlayDelay());
     }
-    IEnumerator PlayDelay() {
+    IEnumerator PlayDelay() 
+    {
         yield return StartCoroutine(FadeOut(gamePanel));
         firebaseAuthManager.OpenGameScene();
     }
