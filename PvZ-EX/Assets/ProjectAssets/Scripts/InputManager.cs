@@ -3,38 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {
-    [Tooltip("Allows debugging prints for this script")]
+    [Tooltip("Allows debug messages for this script")]
     public bool allowDebug;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
-    public void OnMove(InputAction.CallbackContext value)
+    public void OnMove(InputValue value)
     {
-        if (value.performed)
+        if (value.Get<Vector2>() != Vector2.zero)
         {
             if (allowDebug)
             {
-                print(value.ReadValue<Vector2>() + "Performed, moveVector");
+                print(value.Get<Vector2>() + "Pressed, OnMove");
             }
         }
-        if (value.canceled)
+        else
         {
             if (allowDebug)
             {
-                print(value.ReadValue<Vector2>() + "Canceled, moveVector");
+                print(value.Get<Vector2>() + "Not Pressed, OnMove");
             }
         }
+
+        //if (value.performed)
+        //{
+        //    if (allowDebug)
+        //    {
+        //        print(value.ReadValue<Vector2>() + "Performed, OnMove");
+        //    }
+        //}
+        //if (value.canceled)
+        //{
+        //    if (allowDebug)
+        //    {
+        //        print(value.ReadValue<Vector2>() + "Canceled, OnMove");
+        //    }
+        //}
     }
 }
