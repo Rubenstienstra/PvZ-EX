@@ -9,7 +9,6 @@ using System;
 
 public class SqliteExampleSimple : MonoBehaviour
 {
-    public IDbCommand dbCommand;
     public int hitCount = 0;
 
     void Start() // 13
