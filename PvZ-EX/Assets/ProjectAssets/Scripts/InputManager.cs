@@ -26,20 +26,5 @@ public class InputManager : MonoBehaviour
                 print(value.Get<Vector2>() + "Not Pressed, OnMove");
             }
         }
-
-        //if (value.performed)
-        //{
-        //    if (allowDebug)
-        //    {
-        //        print(value.ReadValue<Vector2>() + "Performed, OnMove");
-        //    }
-        //}
-        //if (value.canceled)
-        //{
-        //    if (allowDebug)
-        //    {
-        //        print(value.ReadValue<Vector2>() + "Canceled, OnMove");
-        //    }
-        //}
     }
 }
